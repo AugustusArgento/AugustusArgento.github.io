@@ -9,7 +9,7 @@ html {
 }
 
 #main {
-    width: 100px;
-    height: 100px;
+    width: 100%;
+    height: 0;
     background-color: #c95a2a;
 }
