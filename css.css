@@ -9,6 +9,7 @@ html {
 }
 
 #main {
-    width: 25vw;
-    height: 25vw;
+    width: 100px;
+    height: 100px;
+    background-color: #c95a2a;
 }
