@@ -1,20 +1,109 @@
+<!-- note: a lot of this stuff probably wont work for resolutions other than mine which is an issue seeing how my resolution is fairly uncommon -->
+
 <!DOCTYPE html>
 <html lang="en">
     <head>
-        <title>github pages thing</title>
+        <title>Home</title>
         <meta charset="UTF-8">
-        <meta name="keywords" content="index">
-        <meta name="description" content="idk lol">
+        <meta name="author" content="Louis de Groot">
+        <meta name="keywords" content="games, tictactoe">
+        <meta name="description" content="tictactoe what do you expect">
         
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
         <link href="css.css" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">
+        
+        <!-- <script src="https://kit.fontawesome.com/a3679b0a1f.js" crossorigin="anonymous"></script> -->
     </head>
 
-    <body>
-        <h1>test</h1>
-        <p>hopefully this works thatd be cool ig lol</p>
-    </body>
+    <body> 
+        <nav>
+            <hr>
+            <span class="center">
+                <a href="strategies.html">Strategies</a> | 
+                <a href="takeaways.html">Takeaways</a> | 
+                <a href="moreTictactoe.html">More Tictactoe</a>
+            </span>
+            <p>Navigation (hover over me!)</p>
+        </nav>
+        <!-- <div id="homeButton">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </div> -->
+        <div id="main">            
+            <br><br>
+            <hr>
+            <h1>Tictactoe</h1>
+            <p>Tictactoe is a classic game where people try to get things next to each other. Typically, this is between two people on a three by three grid, with one person using O as their symbol and the other using X. An example of a tictactoe game is a follows:</p>
+            <table>
+                <tr>
+                    <td>X</td>
+                    <td>O</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>X</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>-</td>
+                    <td>X</td>
+                </tr>
+            </table>
+            <p>You can see that a player managed to get three X's in a row, and thus has won.</p>
+            <h2>Notation</h2>
+            <p>Here's how the notation works: there are three characters in total. The first character determines the player (such as X or O), the second character determines the row (starting from the top), and the third character determines the column (starting from the left). Here's an example game with notation:</p>
+            <table>
+                <thead>
+                    <th>X <hr></td>
+                    <th>O <hr></td>
+                </thead>
+                <tr>
+                    <td>X22</td>
+                    <td>O31</td>
+                </tr>
+                <tr>
+                    <td>X13</td>
+                    <td>O21</td>
+                </tr>
+                <tr>
+                    <td>X11</td>
+                    <td>O12</td>
+                </tr>
+                <tr>
+                    <td>X33</td>
+                    <td style="font-weight: bold;">X Wins</td>
+                </tr>
+            </table>
+            <br>
+            <table>
+                <tr>
+                    <td>X</td>
+                    <td>O</td>
+                    <td>X</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>X</td>
+                    <td>-</td>
+                </tr>
+                <tr>
+                    <td>O</td>
+                    <td>-</td>
+                    <td>X</td>
+                </tr>
+            </table>
+            <img src="images/board.jpg" alt="A 3x3 tictactoe board">
+            <img src="images/filledBoard.png" alt="A filled 3x3 tictactoe board, where O has won"
+            <hr>
+        </div>
+   </body>
 </html>

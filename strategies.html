@@ -1,0 +1,119 @@
+<!-- note: a lot of this stuff probably wont work for resolutions other than mine which is an issue seeing how my resolution is fairly uncommon -->
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>Strategies</title>
+        <meta charset="UTF-8">
+        <meta name="author" content="Louis de Groot">
+        <meta name="keywords" content="games, tictactoe">
+        <meta name="description" content="tictactoe what do you expect">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Lato&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+        <link href="css.css" rel="stylesheet">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="images/favicon-16x16.png">
+        <link rel="manifest" href="images/site.webmanifest">
+        
+        <!-- <script src="https://kit.fontawesome.com/a3679b0a1f.js" crossorigin="anonymous"></script> -->
+    </head>
+
+    <body> 
+        <nav>
+            <hr>
+            <span class="center">
+                <a href="index.html">Home</a> | 
+                <a href="takeaways.html">Takeaways</a> | 
+                <a href="moreTictactoe.html">More Tictactoe</a>
+            </span>
+            <p>Navigation (hover over me!)</p>
+        </nav>
+        <!-- <div id="homeButton">
+            <a href="index.html"><i class="fa-solid fa-house"></i></a>
+        </div> -->
+        <div id="main">
+            <br><br>
+            <hr>
+            <p style="text-align: center;">The thing about tictactoe is that <b>if it's played perfectly, it will always end in a draw</b>.</p>
+            <p style="text-align: center;">Here's strategies on how to play for a draw (assuming you play second because otherwise that is too much for me to type):</p>
+            <div class="column">
+                <h1>Center:</h1>
+                <p>If your opponent plays first and picks the center (X22), then you will want to put a symbol in the corner (O11, O13, O31, or O33). Your opponent will play a symbol somewhere, and this will likely have them have two symbols in a row. Stop this by placing a symbol where their third symbol would go (example below).</p>
+                <table>
+                    <tr>
+                        <td>O</td>
+                        <td>O</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>X</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>X</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <p>Here, the moves were X22 O11 X32, and then O12. As you can see, the O12 blocked the potential win that was forming from the X22 and the X32.</p>
+                <p>At this point, you can just <b>block your opponent's threats</b> and eventually the entire board will be filled, resulting in a draw.</p>
+            </div>
+            <div class="column">
+                <h1>Edge:</h1>
+                <p>If your opponent starts on an edge (X12, X21, X23, or X32), then place a symbol in the center (O22). No matter where your opponent moves, you want to place a symbol in a location that threats three symbols in a row.</p>
+                <table>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>O</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>X</td>
+                        <td>-</td>
+                    </tr>
+                </table>
+                <p>Here, the game played as X23 O22 X32 O31.</p>
+                <p>Now, you will enter a state where your opponent is forced to block your threats as you keep creating new ones. If you manage to hold this type of state for long enough (just spend more than 5 seconds looking at the board making sure you don't mess up), then eventually the board will be filled, resulting in a draw.</p>
+            </div>
+            <div class="column">
+                <h1>Corner:</h1>
+                <p>If your opponent plays in a corner (X11, X13, X31, or X33), then place your symbol in the center. Your opponent will likely place a symbol somewhere that threatens a win. If this occurs, block the threat. If it doesn't, then just place a symbol wherever.</p>
+                <table>
+                    <tr>
+                        <td>-</td>
+                        <td>-</td>
+                        <td>X</td>
+                    </tr>
+                    <tr>
+                        <td>-</td>
+                        <td>O</td>
+                        <td>-</td>
+                    </tr>
+                    <tr>
+                        <td>O</td>
+                        <td>X</td>
+                        <td>X</td>
+                    </tr>
+                </table>
+                <p>(moves are as follows: X31 O22 X32 O31 X13)</p>
+                <p>Similarly to Edge, you will now enter a state where you are creating threats and your opponent is being forced to block them (example below). Again, if you manage to hold this state for long enough, the board will be filled up and eventually the game will result in a draw.</p>
+            </div>
+            <p style="text-align: center;">If you want to practice tictactoe, you can go <a href="https://g.co/kgs/bDa8ZD" target="_blank">here</a>.</p>
+            <img src="images/tictactoeStrategy1.png" alt="An image showing the steps through an example tictactoe game">
+            <img src="images/tictactoeStrategy2.jpg" alt="3 example tictactoe games">
+            <hr>
+        </div>
+   </body>
+</html>
