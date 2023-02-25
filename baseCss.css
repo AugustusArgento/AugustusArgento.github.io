@@ -1,0 +1,81 @@
+/* adding this so it actually updates the css hopefully */
+html {
+    background: repeating-linear-gradient( 135deg, rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9) 50px, rgba(29, 29, 29, 0.9) 50px, rgba(29, 29, 29, 0.9) 100px );
+    background-size: contain;
+    background-attachment: fixed;
+
+    text-align: center;
+
+    color: white;
+    font-family: "Lato", Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#main {
+    background-color: #c95a2a;
+    
+    border: 5px solid rgba(29, 29, 29, 0.9);
+    border-radius: 5px;
+
+    position: absolute;
+    width: 90vw;
+    left: 5vw;
+    right: 5vw;
+}
+
+nav {
+    position: fixed;
+    bottom: 0px;
+    left: -5px;
+    z-index: 999999;
+
+    background-color: #9e2b0e;
+    border: 3px solid black;
+    /* border-radius: 4px; */
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+nav ul a {
+    color: white;
+}
+
+nav ul a li {
+    float: left;
+    width: 20vw;
+
+    padding: 10px;
+}
+
+.currentPage {
+    box-shadow: 3px 0px 0px inset black, 0px -5px 0px 0px inset  white;
+}
+
+.notCurrentPage {
+    box-shadow: 3px 0px 0px inset black, 1px 0px 0px 0px inset white;
+}
+
+.currentPage:hover {
+    background-color: white;
+    color: black;
+    transition: 0.2s;
+}
+
+.notCurrentPage:hover {
+    box-shadow: 1px 0px 0px 0px inset black;
+    background-color: black;
+    color: white;
+    transition: 0.2s;
+}
+
+hr {
+    width: 90%;
+    height: 110%;
+}
+
+p, h1, h2, h3, h4, h5, h6 {
+    font-size: 2em;
+}

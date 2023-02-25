@@ -28,6 +28,7 @@ html {
 
     text-align: center;
     vertical-align: middle;
+    overflow: clip;
 
     background-color: #c54a25;
     border: 8px outset #be3b24;
@@ -48,6 +49,12 @@ html {
     box-shadow: 0px 0px 40px 40px #c95a2a;
 }
 
+nav {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}
+
 hr {
     width: 90%;
     height: 110%;
@@ -61,4 +68,7 @@ p, h1, h2, h3, h4, h5, h6 {
     color: black;
     z-index: 999;
     border: 2px solid black;
+
+    position: relative;
+    bottom: 200px;
 }
