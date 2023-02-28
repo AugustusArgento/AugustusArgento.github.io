@@ -2,6 +2,25 @@ button {
     border: 2px solid black;
     border-radius: 4px;
 
+    min-height: 30px;
+
     background-color: #3a2ac9;
     color: antiquewhite;
+    margin: 4px;
+}
+
+p {
+    font-size: 1.75em;
+}
+
+#stats {
+    border: 2px solid rgba(116, 39, 9, 0.904);
+    border-radius: 4px;
+
+    max-width: 40vw;
+    margin: 8px auto;
+}
+
+#unbalance {
+    display: none;
 }
