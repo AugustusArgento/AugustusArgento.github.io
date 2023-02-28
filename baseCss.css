@@ -48,6 +48,7 @@ nav ul a li {
     width: 20vw;
 
     padding: 10px;
+    max-height: 3vw;
 }
 
 .currentPage {
