@@ -2,17 +2,39 @@ let number = 100000
 let baseNumber = number
 let upgradesBought = 0
 let upgradePrice = -20
+let baseUpgradePrice = upgradePrice
 let clickPower = 1
 let upgradeAvailability = false
 let unbalanceAvailability = false
+let up = 0
+let timeAtLastClick = 0
+let timeSinceLastClick = 0
+
+let timeAtStart = Date.now()
+
 
 let upgradeButton = document.getElementById("upgrade")
 let unbalanceButton = document.getElementById("unbalance")
 
-document.getElementById("butt").onclick = function() {number -= clickPower}
-document.getElementById("number").onclick = function() {number = 0}
+let updateVariables = setInterval(
+    function () {
+        timeSinceLastClick = (Date.now() - timeAtLastClick)/1000
 
-document.getElementById("upgrade").onclick = function () {
+        if (number > 0) {
+            number -= clickPower/100
+        }
+    }, 10
+)
+
+document.getElementById("butt").onclick = function() {
+    if (timeSinceLastClick >= 1/(up+1)) {
+        number -= clickPower
+        timeAtLastClick = Date.now()
+    }
+}
+// document.getElementById("number").onclick = function() {number = 0}
+
+upgradeButton.onclick = function () {
     if (number <= baseNumber + upgradePrice && upgradeAvailability) {
         number -= upgradePrice
         clickPower += 1
@@ -20,16 +42,31 @@ document.getElementById("upgrade").onclick = function () {
     }
 }
 
-setInterval(function () {
-    document.getElementById("number").innerHTML = "number: " + Math.ceil(number).toString() + " / " + baseNumber.toString()}, 1)
-setInterval(function () {document.getElementById("nps").innerHTML = "nps: " + (-1 * clickPower).toString()})
-setInterval(function () {
-    if (number > 0) {
-        number -= clickPower
+unbalanceButton.onclick = function () {
+    if (number <= 0) {
+        up += Math.trunc(-1/10 * number) + 1
+        number = baseNumber
+        unbalanceButton.innerHTML = "unbalance"
+        upgradeAvailability = true
+        clickPower = 1
+        upgradePrice = baseUpgradePrice
+        document.getElementById("up").innerHTML = "up: " + up.toString()
+        document.getElementById("butt").style.display = "initial"
+        upgradeButton.style.display = "initial"
     }
-}, 1000)
+}
 
-setInterval(function () {
+let setBackgroundGradient = setInterval(function () {
+    document.getElementById("butt").style.backgroundImage = "linear-gradient(90deg, rgba(64,107,217,1) " + (100*timeSinceLastClick*(up+1)).toString() + "%, rgba(58,42,201,1) " + (100*timeSinceLastClick*(up+1)).toString() + "%)"
+}, 10)
+
+let updateNumberContents = setInterval(function () {document.getElementById("number").innerHTML = "number: " + Math.ceil(number).toString() + " / " + baseNumber.toString()}, 10)
+let updateNpsContents = setInterval(function () {document.getElementById("nps").innerHTML = "nps: " + (-1 * clickPower).toString()}, 10)
+let upgradeTimerContents = setInterval(function () {
+    document.getElementById("timer").innerHTML = "time: " + (Math.trunc((Date.now() - timeAtStart)/1000)).toString()
+}, 10)
+
+let updateUpgradeButton = setInterval(function () {
     if (number > baseNumber + upgradePrice && !upgradeAvailability) { // if i cant afford it and cant see it
         upgradeButton.innerHTML = "wait for a lower number to do something with this"
     }
@@ -48,27 +85,32 @@ setInterval(function () {
     }
 }, 1)
 
-setInterval(function () {
+let whenBalancedReset = setInterval(function () {
     if (number <= 0) {
-        upgradeButton.innerHTML = "no more upgrades for you"
-        upgradeButton.style.boxShadow = "0px 0px 0px 0px #803211"
+        upgradeButton.style.display = "none"
+        upgradeButton.style.boxShadow = " 0px 0px 0px 0px #803211"
         upgradeButton.style.backgroundColor = "#9e2b0e"
+
+        document.getElementById("timer").style.display = "initial"
 
         document.getElementById("butt").style.display = "none"
 
-        upgradePrice = -100000
+        upgradePrice = -9999999999999
         upgradeAvailability = false
     }
 }, 1)
 
-setInterval(function () {
-    document.getElementById("butt").innerHTML = "make number go down by " + clickPower.toString()
+let updateButtonContents = setInterval(function () {
+    document.getElementById("butt").innerHTML = "reduce number by " + clickPower.toString()
 }, 1)
 
-setInterval(function () {
+let updateUnbalanceContents = setInterval(function () {
+    if (unbalanceAvailability && number > 0) {
+        unbalanceButton.style.backgroundColor = "#9e2b0e"
+    }
     if (number <= 0) {
         unbalanceButton.style.display = "initial"
-        unbalanceButton.innerHTML = "unbalance (not implemented)"
+        unbalanceButton.innerHTML = "unbalance for " + Math.trunc(-1/10 * number + 1).toString() + " UP"
         unbalanceAvailability = true
     }
 }, 1)

@@ -75,6 +75,8 @@ nav ul a li {
 hr {
     width: 90%;
     height: 110%;
+    margin-top: 2vh;
+    margin-bottom: 2vh;
 }
 
 p, h1, h2, h3, h4, h5, h6 {

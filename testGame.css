@@ -1,26 +1,61 @@
 button {
+    display: block;
+
     border: 2px solid black;
     border-radius: 4px;
 
-    min-height: 30px;
+    /* min-height: 30px; */
+    width: 100%;
+    
+    width: 15vw;
+    height: 20%;
 
     background-color: #3a2ac9;
     color: antiquewhite;
-    margin: 4px;
+    margin: 5px;
 }
 
 p {
     font-size: 1.75em;
 }
 
-#stats {
-    border: 2px solid rgba(116, 39, 9, 0.904);
+#mainer {
+    display: inline-block;
+    padding: 1vw;
+    border: 3px solid rgba(107, 34, 6, 0.904);
     border-radius: 4px;
+}
 
+#upgrade {
+    transition: 0.2s;
+    margin: 0.25vw;
+}
+
+#stats {
+    float: left;
+    border: 2px solid rgba(116, 39, 9, 0.904); 
+    border-radius: 4px;
+    /* border-right: 2px solid rgba(116, 39, 9, 0.904); */
+
+    width: 15vw;
     max-width: 40vw;
-    margin: 8px auto;
+    margin: 0.25vw;
+}
+
+#stats p {
+    margin: 1.5vh;
+}
+
+#upgrades {
+    float: left;
+    width: 15vw;
+    height: 100%;
 }
 
 #unbalance {
+    display: none;
+}
+
+#timer {
     display: none;
 }
