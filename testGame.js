@@ -157,7 +157,7 @@ let updateNpsContents = setInterval(function () {
 }, 10)
 
 let updateUPContests = setInterval(function () {
-    if (amountOfUnbalances >= 1 ){
+    if (amountOfUnbalances >= 1) {
         document.getElementById("UP").display = "initial"
         document.getElementById("UP").innerHTML = "UP: " + Math.trunc(UP).toString()
     }
@@ -185,7 +185,7 @@ let updateUpgradeButton = setInterval(function () {
     }
 
     if (upgradeAvailability) {
-        upgradeButton.innerHTML  = "price: (" + Math.trunc(-1 * availableNumber).toString() + " / " + Math.trunc(-1 * upgradePrice).toString() + ") (" + Math.trunc(affordableUpgrades).toString() + " available)"
+        upgradeButton.innerHTML = "price: (" + Math.trunc(-1 * availableNumber).toString() + " / " + Math.trunc(-1 * upgradePrice).toString() + ") (" + Math.trunc(affordableUpgrades).toString() + " available)"
         upgradeButton.style.backgroundImage = "linear-gradient(90deg, #0e6821 " + (100*availableNumber/upgradePrice).toString() + "%, #9e2b0e " + (100*availableNumber/upgradePrice).toString() + "%)"
     }
 }, 1)
