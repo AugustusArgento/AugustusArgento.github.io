@@ -1,4 +1,10 @@
 /* adding this so it actually updates the css hopefully */
+:root {
+    --colorOrange: #c95a2a;
+    --colorDarkOrange: #bd442f;
+    --colorDarkerOrange: #9e2b0e;
+}
+
 html {
     background: repeating-linear-gradient( 135deg, rgba(15, 15, 15, 0.9), rgba(15, 15, 15, 0.9) 50px, rgba(29, 29, 29, 0.9) 50px, rgba(29, 29, 29, 0.9) 100px );
     background-size: contain;
@@ -11,7 +17,7 @@ html {
 }
 
 #main {
-    background-color: #c95a2a;
+    background-color: var(--colorOrange);
     
     border: 5px solid rgba(29, 29, 29, 0.9);
     border-radius: 5px;
@@ -28,7 +34,7 @@ nav {
     left: -5px;
     z-index: 999999;
 
-    background-color: #9e2b0e;
+    background-color: var(--colorDarkerOrange);
     border: 3px solid black;
     border-radius: 4px;
 }
@@ -81,4 +87,55 @@ hr {
 
 p, h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
+}
+
+table {
+    border-collapse: collapse;
+    background-color: var(--colorDarkOrange);
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+tr {
+    min-height: 10px;
+}
+
+td {
+    color: white;
+    min-width: 30px;
+    min-height: 30px;
+    height: 30px;
+
+    border: 2px solid black;
+
+    padding: 2px;
+    text-align: center;
+}
+
+button {
+    display: block;
+
+    border: 2px solid black;
+    border-radius: 4px;
+
+    /* min-height: 30px; */
+    width: 100%;
+    
+    width: 15vw;
+    height: 20%;
+
+    background-color: var(--colorDarkOrange);
+    color: white;
+    margin: 5px;
+
+    transition: 0.2s;
+
+    margin-left: auto;
+    margin-right: auto;
+}
+
+button:hover {
+    cursor: pointer;
+    box-shadow: inset 0px 0px 25px -16px rgba(0,0,0,0.75);
 }
