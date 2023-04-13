@@ -11,6 +11,8 @@
 
         <link href="baseCss.css" rel="stylesheet">
         <link href="testGame.css" rel="stylesheet">
+
+        <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico"
     </head>
 
     <body>
@@ -20,38 +22,54 @@
                 <a href="moveTheThing.html"><li class="notCurrentPage">move the thing</li></a>
                 <a href="testGame.html"><li class="currentPage">balance</li></a>
                 <a href="multiplicationTable.html"><li class="notCurrentPage">multiplication table</li></a>
+                <a href="balanceInfo.html"><li class="notCurrentPage">balance info</li></a>
             </ul>
         </nav>
 
-        <!-- <div id="progressbar"></div> --> <!--used to be here but decided it looks bad-->
+        <!-- <div id="progressbar"></div> --> <!-- used to be here but decided it looks bad -->
         <div id="main">
             <h1>balance</h1>
             <hr>
+            <div id="mainArea">
+                <div class="section" id="generationSection">
 
-            <div id="generation">
-                <div id="progressbar"></div>
-                <hr>
-                <div id="stats">
-                    <p id="number"></p>
-                    <p id="availableNumber"></p>
-                    <p id="nps"></p>
-                    <p id="UP"></p>
-                    <p id="timer"></p>
+                    <div id="progressbar"></div>
+
+                    <hr>
+
+                    <div id="stats">
+                        <p id="number"></p>
+                        <p id="availableNumber"></p>
+                        <p id="nps"></p>
+                        <p id="UP"></p>
+                        <p id="timer"></p>
+                    </div>
+
+                    <div id="upgrades">
+
+                        <button id="butt"></button>
+                        <button id="upgrade"></button>
+                        <button id="unbalance"></button>
+                    
+                    </div>
+
                 </div>
 
-                <div id="upgrades">
+                <div class="section" id="crismSection">
 
-                    <button id="butt"></button>
-                    <button id="upgrade"></button>
-                    <button id="unbalance"></button>
-                
+                    <p>Crism</p>
+                    <hr>
+                    <canvas id="crism"></canvas>
+
                 </div>
 
             </div>
-
+            
             <hr>
         </div>
 
         <script src="testGame.js"></script>
+        <script src="drawCrismCanvas.js"></script>
+        <script src="css.js"></script>
    </body>
 </html>

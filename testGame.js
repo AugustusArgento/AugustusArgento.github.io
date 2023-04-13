@@ -39,7 +39,7 @@ let updateVariables = setInterval(
 
         if (number > 0) {
             number -= totalPower/100
-        }        
+        }
 
         tempNumber = availableNumber
         tempUpgradePrice = upgradePrice

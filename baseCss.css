@@ -51,7 +51,7 @@ nav ul a {
 
 nav ul a li {
     float: left;
-    width: 20vw;
+    width: calc(80vw / 5);
 
     padding: 10px;
     max-height: 3vw;
@@ -85,7 +85,7 @@ hr {
     margin-bottom: 2vh;
 }
 
-p, h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6 {
     font-size: 2em;
 }
 
@@ -135,7 +135,26 @@ button {
     margin-right: auto;
 }
 
+ul {
+    text-align: center;
+    list-style-position: inside;
+}
+
 button:hover {
     cursor: pointer;
     box-shadow: inset 0px 0px 25px -16px rgba(0,0,0,0.75);
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+::-webkit-scrollbar-track-piece {
+    background: transparent url("images/transparent.png") repeat-y !important;
+}
+::-webkit-scrollbar-thumb {
+    background-color: var(--colorOrange);
+    border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+    background-color: var(--colorDarkOrange)
 }

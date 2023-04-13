@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- ctrl+shift+v to preview page -->
+    <head>
+        <title>Main</title>
+        <meta charset="UTF-8">
+        
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Lato&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+        <link href="baseCss.css" rel="stylesheet">
+        <link href="balanceInfo.css" rel="stylesheet">
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <a href="index.html"><li class="notCurrentPage">main</li></a>
+                <a href="moveTheThing.html"><li class="notCurrentPage">move the thing</li></a>
+                <a href="testGame.html"><li class="notCurrentPage">balance</li></a>
+                <a href="multiplicationTable.html"><li class="notCurrentPage">multiplication table</li></a>
+                <a href="balanceInfo.html"><li class="currentPage">balance info</li></a>
+            </ul>
+        </nav>
+        <div id="main">
+            <h1>changelog + balance info</h1>
+            <hr>
+            <h3>balance info:</h3>
+            <p>ok uh thanks for play my game it's not that complicated rn but ill change this as it updates</p>
+            <p>anyways <b>your goal is to have your number reach zero.</b> it starts from 100,000, and you want to decrease it</p>
+            <p>this makes balance not like the other idle games because you make your number go down, not up</p>
+            <p>there's two ways you can make your number go down: active decreasing, and idle decreasing</p>
+            <p>you can actively decrease your number by clicking on the blue button</p>
+            <p>your number is always idly decreasing based off of your nps (number per second)</p>
+            <p>you can make your nps more negative and increase the strength of your active decrease by buying upgrades</p>
+            <p><b>you can buy upgrades using your drained number</b> (it's confusing but itll make more sense after a bit, i promise), and that'll increase the strength of both of your decreases</p>
+            <p>however, the price of your upgrade will increase. at a certain point, the price will not be worth the benefit to buy an upgrade (this is at around 50-60 bought upgrades iirc).</p>
+            <p>eventually, you'll be able to reach zero (that's the big goal from earlier)</p>
+            <p>when your number reaches zero <b>you'll be offered a certain amount of UP</b> (this is based on how negative your number ends up being before it stops changing)</p>
+            <p>UP affects...some stuff i forget i coded that like a month ago ok. i think it's how frequently you can decrease your number and the amount of upgrades you have?</p>
+            <p>anyways the idea is that the power from UP will allow you to reach zero faster and gain more UP. i havent gotten to this point personally, but the time it takes to reach zero should follow a pattern of exponential decay or something (imagine it gets cut in half every time)</p>
+            <p>you may have also noticed the little box that says crism. dont worry about that since <b>crism has no functionality rn</b></p>
+            <p>the idea with crism is that you fill each vertice of your current polygon (eg 3 vertices on a triangle), and they can be filled by the number of vertices (takes three to fill a node in a triangle)</p>
+            <p>you fill the vertices with UP (which will also decrease the amount of free upgrades you have), and once all of your vertices are fully filled, they will be reset and you will gain another</p>
+            <p>i dont have any idea as to what the polygons will do, but there'll be some sort of crism prestige that allows you to make stars, which will be stronger than polygons</p>
+            <p>eventually there'll be a prestige for the prestige (?) once you reach the highest tier of stars for the highest number of vertices (?) which will... do something</p>
+            <p>anyways thats really all i have in mind- oh wow this went long</p>
+            <p>uh if you want to contact me just <b>message me on discord (Augustus_Argento#1324)</b> and hopefully i can answer questions or something idk</p>
+            <p>just noticed how i made a whole new tab just for balance</p>
+            <p>thats cool</p>
+            <p>anyways gonna push this to github now</p>
+
+            <hr>
+
+            <h3>changelog:</h3>
+            <p>ok i decided to make this thing and just realized i should probably say that as of making this balance is v0.0.1</p>
+            <div id="v001">
+                <h4>v0.0.1 notes:</h4>
+                <ul>
+                    <li>ok just made a few css changes to make this work</li>
+                    <li>anyways</li>
+                    <li>i added crism which will be like the next big thing (but theres no functionality rn it just looks pretty)</li>
+                    <li>i kind of went a bit overboard with it and it can make like many shapes (only regular polygons and stars, but as many as i want so whatever)</li>
+                    <li>i also changed some css</li>
+                    <li>i also added a new tab <a href="multiplicationTable.html">for making multiplication tables</a> which is based off of a thing i made for school</li>
+                    <li>fun fact if you didnt know this whole website was based off of something i made for school originally (it was on like tic-tac-toe strategies or something if you're curious)</li>
+                    <li>speaking of tic-tac-toe strategies i removed a lot of leftover things from that (images)</li>
+                    <li>added a favicon to <a href="balance.html">balance</a> based off of crism that looked cool (it came from a bug though so idk if i can ever get the actual thing back but whatever)</li>
+                    <li>um what else</li>
+                    <li>oh yeah i added this i think i mentioned that? idk</li>
+                    <li>uh i made the font actually apply inside buttons idk if that counts</li>
+                    <li>im running out of things to write and this looks long enough already so thats it i think (but i did like a lot ok)</li>
+                </ul>
+            </div>
+            <hr>
+        </div>
+   </body>
+</html>
