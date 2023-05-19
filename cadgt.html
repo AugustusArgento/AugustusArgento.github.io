@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+
+    <head>
+
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>game</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="css/cadgt.css">
+        <link rel="stylesheet" href="css/baseCss.css">
+
+
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Lato&family=Roboto&family=Source+Code+Pro&display=swap" rel="stylesheet">
+
+    </head>
+
+    <body>
+        <nav>
+            <ul>
+                <a href="index.html"><li class="notCurrentPage">main</li></a>
+                <a href="moveTheThing.html"><li class="notCurrentPage">move the thing</li></a>
+                <a href="testGame.html"><li class="notCurrentPage">balance</li></a>
+				<a href="multiplicationTable.html"><li class="notCurrentPage">multiplication table</li></a>
+				<a href="balanceInfo.html"><li class="notCurrentPage">balance info</li></a>
+				<a href="cadgt.html"><li class="currentPage">cadgt</li></a>
+            </ul>
+        </nav>
+
+        <div id="topPulleyThing">
+            <h2>How To Play</h2>
+            <hr>
+                <p>You are the <b>White</b> square</p>
+                <p>Use the Arrow Keys to move</p>
+                <p>Dodge the <span style="color:#c95a2a"><b>Orange</b></span> obstacles</p>
+                <p>You can wrap around the board if Wrap Mode is enabled</p>
+                <p>Survive for as long as you can</p>
+                <hr>
+                <p>&#8595</p>
+        </div>
+        <div id="main">
+            <br><br><br><br><br> <!--i am so very sorry-->
+            <h1>Chaotic All-Dimensional Grid Flappy Bird</h1>
+            <hr> <br>
+            <div id="mainGame">
+                <canvas id="game"></canvas>
+            </div>
+            <br>
+            <button id="wrapMode">wrap mode is disabled</button>
+            <hr>
+
+            <p id="roundsSurvived"></p>
+            <p id="deaths"></p>
+            <p id="highScore"></p>
+            <br>
+        </div>
+        <script src="js/cadgt.js"></script>
+    </body>
+
+</html>
