@@ -55,7 +55,7 @@ nav ul a {
 
 nav ul a li {
     float: left;
-    width: calc(95.19vw / 6);
+    width: calc(94vw / 7);
 
     padding: 10px;
     max-height: 3vw;
@@ -156,9 +156,9 @@ button:hover {
     background: transparent url("images/transparent.png") repeat-y !important;
 }
 ::-webkit-scrollbar-thumb {
-    background-color: var(--colorOrange);
+    background-color: #a0a0a0;
     border-radius: 2px;
 }
 ::-webkit-scrollbar-thumb:hover {
-    background-color: var(--colorDarkOrange)
+    background-color: #ffffff
 }

@@ -2,12 +2,13 @@
 <html lang="en">
     <!-- ctrl+shift+v to preview page -->
     <head>
-        <title>Main</title>
+        <title>MMSD</title>
         <meta charset="UTF-8">
 
-        <meta content="landing page" property="og:title" />
-        <meta content="there's cool things here i think" property="og:description" />
-        <meta content="https://augustusargento.github.io/index.html" property="og:url" />
+        <title>augustus's github</title>
+        <meta content="every day" property="og:title" />
+        <meta content="once a day" property="og:description" />
+        <meta content="https://augustusargento.github.io/mmsd.html" property="og:url" />
         <meta content="images\Screenshot taken on 04 12, 2023 at 14-29-39.png" property="og:image" />
         <meta content="#c95a2a" data-react-helmet="true" name="theme-color" />
         
@@ -16,37 +17,53 @@
         <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@500&family=Lato&family=Source+Code+Pro&display=swap" rel="stylesheet">
 
         <link href="css/baseCss.css" rel="stylesheet">
+        <link href="css/mmsd.css" rel="stylesheet">
     </head>
 
     <body>
         <nav>
             <ul>
-                <a href="index.html"><li class="currentPage">main</li></a>
+                <a href="index.html"><li class="notCurrentPage">main</li></a>
                 <a href="moveTheThing.html"><li class="notCurrentPage">move the thing</li></a>
                 <a href="testGame.html"><li class="notCurrentPage">balance</li></a>
                 <a href="multiplicationTable.html"><li class="notCurrentPage">multiplication table</li></a>
                 <a href="balanceInfo.html"><li class="notCurrentPage">balance info</li></a>
                 <a href="cadgt.html"><li class="notCurrentPage">cadgt</li></a>
-                <a href="mmsd.html"><li class="notCurrentPage">mmsd</li></a>
+                <a href="mmsd.html"><li class="currentPage">mmsd</li></a>
             </ul>
         </nav>
         <div id="main">
-            <p>main page <i>still</i> wip, come back later</p>
+            <hr>
+
+            <h1>MMSD</h1>
 
             <hr>
-            <h3>changelog at the bottom of <a href="balanceInfo.html">here</a></h3>
+            <div id="stuff">
+                <div id="heyGuessWhatINeedANOTHERDiv">
+                    <h3 id="header"></h3>
+                    <p id="date">
+                    <p id="optional"></p>
+                    <p id="content"></p>
+                </div>
+            </div>
+            
+            <br><br>
+
+            <table id="mainTable">
+                <tr>
+                    <td id="nb">Month:</td>
+                    <td id="nb"><table id="table1"></table></td>
+                </tr>
+                <tr>
+                    <td id="nb">Day:</td>
+                    <td id="nb"><table id="table2"></table></td>
+                </tr>
+            </table>
             <br>
-            <h1>update (2) (2) (2) (2)!!</h4>
-            <p><a href="mmsd.html">theres a new new thing called mmsd</a>
-            <p>it's cool i think go check it out</p>
+
             <hr>
-
-            <p>note:</p>
-            <p>page can break when on non-default zoom (basically just very minor things only i care about) so for my sanity please dont zoom in/out, everything should be fine without any zoom so yeah</p>
-            <p>tl;dr dont zoom please thanks</p>
-
-
-            <p>ignore me</p>
         </div>
+
+        <script src="js/mmsd.js"></script>
    </body>
 </html>

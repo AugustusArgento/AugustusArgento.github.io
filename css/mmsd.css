@@ -1,0 +1,41 @@
+#stuff {
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+
+    height: 250px;
+    overflow: auto;
+
+    background-color: var(--colorDarkOrange);
+    border: 3px solid var(--colorDarkerOrange);
+    border-radius: 4px;
+}
+
+#heyGuessWhatINeedANOTHERDiv {
+    /* update i actually didnt need this div haha how funny literally rofl rn xd */
+    margin: auto;
+    /* background-color: #000; */
+}
+
+#header, #content {
+    margin: 0px;
+}
+
+#mainTable {
+    background-color: #0000;
+}
+
+
+#mainTable td {
+    user-select: none;
+}
+
+#table1 td:hover, #table2 td:hover {
+    cursor: pointer;
+    transition: 0.1s;
+    background-color: #9e2b0ecc !important;
+}
+
+#nb {
+    border: 0px solid #0000;
+}
