@@ -19,7 +19,7 @@ let DIM = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
 // you can tell i didnt write this because it has semicolons
 
 async function populate() {
-    const requestURL = "http://127.0.0.1:5500/json/mmsd.json";
+    const requestURL = "https://augustusargento.github.io/json/mmsd.json";
     const request = new Request(requestURL);
   
     const response = await fetch(request);
