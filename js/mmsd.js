@@ -7,12 +7,13 @@ let sebuttons = []
 let darrows = []
 let dacells = []
 
-let month = new Date().getMonth()
+let month = new Date().getMonth() + 1
 let day = new Date().getDate()
 
 let everything
 
 let DIM = [0, 31, 59, 90, 120, 151, 181, 212, 243, 273, 304, 334]
+let MDIM = [31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
 
 
 // gonna be honest i do not know how it works however mdn would never lie to me
@@ -25,19 +26,52 @@ async function populate() {
     const response = await fetch(request);
     everything = await response.json();
     updateDisplay(new Date().getMonth() + 1, new Date().getDate())
-    sebuttons[month].style.backgroundColor = "#9e2b0e"
+    sebuttons[month - 1].style.backgroundColor = "#9e2b0e"
     dacells[Math.floor(day / 7)][day % 7 - 1].style.backgroundColor = "#9e2b0e"
 }
 
 
 
 function updateDisplay(month, day) {
+    // console.log("month: " + month.toString())
+    // console.log("day: " + day.toString())
     let input = DIM[month - 1] + day
     console.log("input: " + input.toString())
+
+    if (everything[input]["title"] == "") {
+        document.getElementById("header").innerHTML = "no data for this, please wait 3-5 business days"
+    }
+    if (everything[input]["date"] == "") {
+        document.getElementById("date").innerHTML = "no data for this, please wait 3-5 business days"
+    }
+    if (everything[input]["descriptor"] == "") {
+        document.getElementById("optional").innerHTML = "no data for this, please wait 3-5 business days"
+    }
+    if (everything[input]["content"] == "") {
+        document.getElementById("content").innerHTML = "no data for this, please wait 3-5 business days"
+    }
+    
+
     document.getElementById("header").innerHTML = everything[input]["title"]
     document.getElementById("date").innerHTML = everything[input]["date"]
     document.getElementById("optional").innerHTML = everything[input]["descriptor"]
     document.getElementById("content").innerHTML = everything[input]["content"]
+}
+
+
+function correctDayVisibility() {
+    for (let i=0; i<dacells.length; i++) {
+        for (let j=0; j<dacells[i].length; j++) {
+            if (7*i + j+1 > MDIM[month - 1]) {
+                dacells[i][j].style.display = "none"
+                dacells[i][j].style.backgroundColor = "#c95a2a"
+            }
+            else {
+                dacells[i][j].style.display = ""
+                dacells[i][j].style.backgroundColor = "#bd442f"
+            }
+        }
+    }
 }
 
 // set up table1
@@ -62,6 +96,7 @@ for (let i=0; i<sebuttons.length; i++) {
                 sebuttons[j].style.backgroundColor = "#9e2b0e"
             }
         }
+        correctDayVisibility()
     }
 
 }
@@ -95,7 +130,7 @@ for (let i=0; i<dacells.length; i++) {
                 }
             }
 
-            updateDisplay(month, day)
+            updateDisplay(month, day) // i dont know why it has to be month + 1 but i do know that it makes it work
         }
 
     }
@@ -103,3 +138,6 @@ for (let i=0; i<dacells.length; i++) {
 
 
 populate()
+correctDayVisibility()
+updateDisplay()
+console.log("initial setup done")

@@ -11,6 +11,14 @@
     border-radius: 4px;
 }
 
+#table1 td, #table2 td {
+    background-color: var(--colorDarkOrange);
+}
+
+#table1, #table2 {
+    background-color: #0000;
+}
+
 #heyGuessWhatINeedANOTHERDiv {
     /* update i actually didnt need this div haha how funny literally rofl rn xd */
     margin: auto;
