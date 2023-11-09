@@ -34,7 +34,7 @@ button {
 
 nav {
     position: fixed;
-    bottom: 0px;
+    bottom: -3px;
     left: -5px;
     z-index: 999999;
 
@@ -55,7 +55,7 @@ nav ul a {
 
 nav ul a li {
     float: left;
-    width: calc(94vw / 7);
+    width: calc(60vw / 7);
 
     padding: 10px;
     max-height: 3vw;
@@ -153,7 +153,7 @@ button:hover {
     width: 5px;
 }
 ::-webkit-scrollbar-track-piece {
-    background: transparent url("images/transparent.png") repeat-y !important;
+    /* background: transparent url("images/transparent.png") repeat-y !important; */
 }
 ::-webkit-scrollbar-thumb {
     background-color: #a0a0a0;

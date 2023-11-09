@@ -11,6 +11,12 @@
     border-radius: 4px;
 }
 
+
+#stuff hr {
+    margin: 5px 0px 0px 0px;
+    width: initial;
+}
+
 #table1 td, #table2 td {
     background-color: var(--colorDarkOrange);
 }
@@ -20,13 +26,21 @@
 }
 
 #heyGuessWhatINeedANOTHERDiv {
-    /* update i actually didnt need this div haha how funny literally rofl rn xd */
+    /* update i actually didnt need this div haha how funny literally rofl rn xd */ /* update i did need this div */
+    text-align: initial;
     margin: auto;
+    padding: 5px 15px;
     /* background-color: #000; */
 }
 
-#header, #content {
+#header {
+    font-family: "Kanit", sans-serif;
     margin: 0px;
+}
+
+#date, #optional {
+    float: left;
+    margin: 0px 10px 0px 0px;
 }
 
 #mainTable {
