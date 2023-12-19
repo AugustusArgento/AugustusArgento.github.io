@@ -19,25 +19,21 @@ let SDIM = [0, 3, 3, 6, 1, 4, 6, 2, 5, 0, 3, 5]
 
 let input = DIM[month - 1] + day
 
+let currentMonth
+let currentDay
 
-// gonna be honest i do not know how it works however mdn would never lie to me
-// you can tell i didnt write this because it has semicolons
+
 
 async function populate() {
-    // const requestURL = "https://augustusargento.github.io/json/mmsd.json";
-    // const requestURL = "./json/mmsd.json"
-    // const request = new Request(requestURL);
-  
-    // const response = await fetch(request);
-    // everything = await response.json();
-
     let theJson = $.getJSON("./json/mmsd.json", await function(json) {
         everything = json
         // console.log(json)
-        console.log(everything)
-        updateDisplay(new Date().getMonth() + 1, new Date().getDate())
-        correctDayVisibility()
-        console.log("done loading")
+        // console.log(everything)
+        month = new Date().getMonth() + 1
+        day = new Date().getDate()
+        updateDisplay(month, day)
+        console.log("month: " + String(month))
+        console.log("data has been loaded (go me)")
     })
     // everything = theJson
     sebuttons[month - 1].style.backgroundColor = "#9e2b0e"
@@ -48,6 +44,7 @@ async function populate() {
 
 
 function updateDisplay(month, day) {
+    correctDayVisibility()
     // console.log("month: " + month.toString())
     // console.log("day: " + day.toString())
     input = DIM[month - 1] + day
@@ -55,27 +52,55 @@ function updateDisplay(month, day) {
     // console.log("input: " + input.toString())
 
     if (everything[input]["title"] == "") {
-        console.log("is this working")
         document.getElementById("header").innerHTML = "no data for this, please wait 3-5 business days"
     }
+    else {
+        document.getElementById("header").innerHTML = everything[input]["title"]
+    }
+
     if (everything[input]["date"] == "") {
-        console.log("is this working")
         document.getElementById("date").innerHTML = "no data for this, please wait 3-5 business days"
     }
-    if (everything[input]["descriptor"] == "") {
-        console.log("is this working")
-        document.getElementById("optional").innerHTML = "no data for this, please wait 3-5 business days"
+    else {
+        document.getElementById("date").innerHTML = everything[input]["date"]
     }
+
+    if (everything[input]["descriptor"] == "") {
+        document.getElementById("optional").innerHTML = ""
+    }
+    else {
+        document.getElementById("optional").innerHTML = ", " + everything[input]["descriptor"]
+    }
+
     if (everything[input]["content"] == "") {
-        console.log("is this working")
         document.getElementById("content").innerHTML = "no data for this, please wait 3-5 business days"
     }
-    
+    else {
+        document.getElementById("content").innerHTML = everything[input]["content"]
+    }
 
-    document.getElementById("header").innerHTML = everything[input]["title"]
-    document.getElementById("date").innerHTML = everything[input]["date"]
-    document.getElementById("optional").innerHTML = everything[input]["descriptor"]
-    document.getElementById("content").innerHTML = everything[input]["content"]
+
+
+    for (let i=0; i<sebuttons.length; i++) {
+        if (i+1 == month) {
+            sebuttons[i].style.backgroundColor = "#9e2b0e"
+        }
+        else {
+            sebuttons[i].style.backgroundColor = "#bd442f"
+        }
+    }
+
+    for (let i=0; i<dacells.length; i++) {
+        for (let j=0; j<dacells[i].length; j++) {
+            dacells[i][j].style.backgroundColor = "#bd442f"
+        }
+    }
+
+    cell = SDIM[month - 1] + day
+    if (month == currentMonth) {
+        dacells[Math.floor((cell - 1)/7)][(cell - 1) % 7].style.backgroundColor = "#9e2b0e"
+    }
+    
 }
 
 
@@ -117,13 +142,12 @@ function correctDayVisibility() {
                 dacells[i][j].style.opacity = 0
                 dacells[i][j].style.border = "2px solid #0000"
             }
-
         }
     }
 }
 
-// set up table1
 
+// set up table1 (the one for the months)
 serow = selectionMenu.insertRow()
 for (let i=0; i<12; i++) {
     sebuttons.push(serow.insertCell())
@@ -132,25 +156,26 @@ for (let i=0; i<12; i++) {
 for (let i=0; i<sebuttons.length; i++) {
     sebuttons[i].innerHTML = (i + 1).toString()
 
-
     sebuttons[i].onclick = () => {
         month = i + 1
+        updateDisplay(month, day)
+        // month = i + 1
 
-        for (let j=0; j<sebuttons.length; j++) {
-            if (i != j) {
-                sebuttons[j].style.backgroundColor = "#bd442f"
-            }
-            else {
-                sebuttons[j].style.backgroundColor = "#9e2b0e"
-            }
-        }
-        correctDayVisibility()
+        // for (let j=0; j<sebuttons.length; j++) {
+        //     if (i != j) {
+        //         sebuttons[j].style.backgroundColor = "#bd442f"
+        //     }
+        //     else {
+        //         sebuttons[j].style.backgroundColor = "#9e2b0e"
+        //     }
+        // }
+        // correctDayVisibility()
     }
 
 }
 
-// set up table2
 
+// set up table2 (the one for the days)
 for (let i=0; i<6; i++) {
     darrows.push(days.insertRow())
     dacells.push([])
@@ -163,22 +188,24 @@ for (let i=0; i<dacells.length; i++) {
     for (let j=0; j<dacells[i].length; j++) {
         dacells[i][j].innerHTML = (7*i + j + 1).toString()
 
-        
         dacells[i][j].onclick = () => {
             day = 7*i + j + 1 - SDIM[month-1];
+            currentMonth = month
+            currentDay = day + DIM[currentMonth - 1]
+            console.log([currentMonth, currentDay])
 
-            for (let x=0; x<dacells.length; x++) {
-                for (let y=0; y<dacells[x].length; y++) {
-                    if (i != x || j != y) {
-                        dacells[x][y].style.backgroundColor = "#bd442f"
-                    }
-                    else {
-                        dacells[x][y].style.backgroundColor = "#9e2b0e"
-                    }
-                }
-            }
-
-            updateDisplay(month, day) // i dont know why it has to be month + 1 but i do know that it makes it work
+            // for (let x=0; x<dacells.length; x++) {
+            //     for (let y=0; y<dacells[x].length; y++) {
+            //         if (i != x || j != y) {
+            //             dacells[x][y].style.backgroundColor = "#bd442f"
+            //         }
+            //         else {
+            //             dacells[x][y].style.backgroundColor = "#9e2b0e"
+            //         }
+            //     }
+            // }
+            console.log("month: " + String(day))
+            updateDisplay(month, day)
         }
 
     }

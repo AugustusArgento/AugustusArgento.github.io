@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+    <!-- ctrl+shift+v to preview page -->
+    <head>
+        <title>Embedder</title>
+        <meta charset="UTF-8">
+
+    </head>
+
+    <body onload="checkQueryString()">
+        <p>This side is used as a way to use embed stuff.</p>
+        <form>
+            <label>Put the text you want to embed here: </label> <br>
+            <input type="text" name="embedScript" id="inputField">
+            <input type="submit">
+        </form>
+
+        <br>
+        <button id="submissionButton" onclick="processEmbed()">Load Embed Here</button>
+        <hr>
+
+        <div id="embedArea"></div>
+        <button id="copyTextArea" style="display: none">Copy current link</button>
+        <script src="js/embedder.js"></script>
+   </body>
+</html>
